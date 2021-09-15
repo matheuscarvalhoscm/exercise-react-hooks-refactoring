@@ -8,10 +8,7 @@ function Provider({ children }) {
   const [ cars, setCarsPosition ] = useState({
     red: false,
     blue: false,
-    yellow: false,})
-
-  const [ signal, setSignalColor ] = useState({
-    color: 'red',
+    yellow: false,
   })
 
   function moveCar(car, side) {
@@ -20,6 +17,7 @@ function Provider({ children }) {
         [car]: side,
     });
   };
+
 
   function changeSignal(signalColor) {
     setSignalColor({
@@ -41,5 +39,6 @@ function Provider({ children }) {
       </CarsContext.Provider>
     );
   }
+
 
 export default Provider;
