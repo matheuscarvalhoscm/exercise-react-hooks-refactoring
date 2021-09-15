@@ -6,9 +6,9 @@ import CarsContext from './CarsContext';
 function Provider({ children }) {
 
   const [ cars, setCarsPosition ] = useState({
-      red: false,
-      blue: false,
-      yellow: false,
+    red: false,
+    blue: false,
+    yellow: false,
   })
 
   function moveCar(car, side) {
@@ -18,9 +18,19 @@ function Provider({ children }) {
     });
   };
 
+
+  function changeSignal(signalColor) {
+    setSignalColor({
+      ...signal,
+        color: signalColor,
+    });
+  };
+
     const context = {
       cars,
+      signal,
       moveCar: moveCar,
+      changeSignal: changeSignal,
     };
 
     return (
@@ -28,6 +38,7 @@ function Provider({ children }) {
         {children}
       </CarsContext.Provider>
     );
-  };
+  }
+
 
 export default Provider;

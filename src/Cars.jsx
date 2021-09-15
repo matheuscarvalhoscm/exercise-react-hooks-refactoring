@@ -6,8 +6,9 @@ import carBlue from './images/carBlue.jpeg';
 import carRed from './images/carRed.jpeg';
 import carYellow from './images/carYellow.jpeg';
 
-function Cars() {
-  const { cars: { red, yellow, blue }, moveCar } = useContext(CarsContext);
+
+function Cars(){
+    const { cars: { red, blue, yellow }, moveCar } = useContext(CarsContext);
     return (
       <div>
         <div>
